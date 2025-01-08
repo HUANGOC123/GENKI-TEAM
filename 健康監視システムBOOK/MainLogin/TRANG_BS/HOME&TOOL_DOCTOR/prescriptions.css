@@ -1,0 +1,149 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Tạo Đơn Thuốc */
+.create-prescription {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-prescription h2 {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 5px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Danh Sách Đơn Thuốc */
+.prescription-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prescription-list h2 {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f1f1f1;
+    color: #28a745;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+table .btn-view,
+table .btn-edit,
+table .btn-delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+table .btn-view {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+table .btn-edit {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+table .btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+table button:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 30px;
+}

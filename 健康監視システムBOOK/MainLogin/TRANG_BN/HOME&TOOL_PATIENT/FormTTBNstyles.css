@@ -1,0 +1,75 @@
+/* Cài đặt chung */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.form-title {
+    text-align: center;
+    color: #00b894;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.info-table input, .info-table select, .info-table textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.info-table input:disabled, .info-table select:disabled, .info-table textarea:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+}
+
+/* Các nút */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #00b894;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #00cec9;
+}
+
+/* Nút lưu */
+.save-btn {
+    background-color: #00b894;
+}
+
+/* Nút chỉnh sửa */
+.edit-btn {
+    background-color: #3498db;
+}

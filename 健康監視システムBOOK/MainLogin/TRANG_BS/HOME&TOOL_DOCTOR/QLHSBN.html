@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Hồ Sơ Bệnh Nhân</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="patient-management.css">
+</head>
+<body>
+    <header>
+        <h1>Quản Lý Hồ Sơ Bệnh Nhân</h1>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Tìm Kiếm Bệnh Nhân</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập tên, mã bệnh nhân hoặc số điện thoại..." />
+                <button><i class="fas fa-search"></i> Tìm Kiếm</button>
+            </div>
+        </section>
+
+        <section class="patient-list">
+            <h2>Danh Sách Bệnh Nhân</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã</th>
+                        <th>Họ và Tên</th>
+                        <th>Giới Tính</th>
+                        <th>Tuổi</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BN001</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>Nam</td>
+                        <td>45</td>
+                        <td>0123456789</td>
+                        <td>
+                            <button class="btn-view"><i class="fas fa-eye"></i> Xem</button>
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BN002</td>
+                        <td>Trần Thị B</td>
+                        <td>Nữ</td>
+                        <td>38</td>
+                        <td>0987654321</td>
+                        <td>
+                            <button class="btn-view"><i class="fas fa-eye"></i> Xem</button>
+                            <button class="btn-edit"><i class="fas fa-edit"></i> Sửa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>

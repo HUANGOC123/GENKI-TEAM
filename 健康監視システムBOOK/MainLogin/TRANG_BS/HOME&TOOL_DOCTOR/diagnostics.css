@@ -1,0 +1,139 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Form Section */
+.symptom-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.symptom-section h2 {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 5px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Results Section */
+.results-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h2 {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.result-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #28a745;
+}
+
+.result-item h3 {
+    font-size: 18px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.result-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.result-item .btn-more-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.result-item .btn-more-info:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 30px;
+}

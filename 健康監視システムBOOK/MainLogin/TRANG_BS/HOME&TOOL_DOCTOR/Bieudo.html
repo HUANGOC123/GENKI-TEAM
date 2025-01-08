@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ theo dõi sức khỏe</title>
+    <link rel="stylesheet" href="Bieudostyles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Biểu đồ theo dõi sức khỏe của bạn</h1>
+        </header>
+        <div class="dashboard">
+            <div class="info-section">
+                <p>Thông tin sức khỏe trong tuần qua</p>
+                <ul>
+                    <li>Số bước đi: 12,000 bước/ngày</li>
+                    <li>Giấc ngủ trung bình: 7 tiếng</li>
+                    <li>Lượng nước uống: 2 lít/ngày</li>
+                </ul>
+            </div>
+            <div class="chart-container">
+                <canvas id="healthChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

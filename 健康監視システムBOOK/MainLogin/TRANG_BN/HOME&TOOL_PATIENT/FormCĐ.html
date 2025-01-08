@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài Đặt</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Settingstyles.css">
+</head>
+<body>
+    <header>
+        <button class="language-switch" onclick="switchLanguage()">VN / JP</button>
+    </header>
+
+    <div class="main-content">
+        <h1 class="page-title">Cài Đặt</h1>
+
+        <div class="settings-container">
+            <!-- Cài đặt Ngôn ngữ -->
+            <div class="setting-option">
+                <i class="fas fa-language"></i>
+                <span>Ngôn Ngữ</span>
+                <select>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="jp">Tiếng Nhật</option>
+                </select>
+            </div>
+
+            <!-- Cài đặt Thông Báo -->
+            <div class="setting-option">
+                <i class="fas fa-bell"></i>
+                <span>Thông Báo</span>
+                <input type="checkbox" checked> Nhận thông báo
+            </div>
+
+            <!-- Cài đặt Thông Tin Tài Khoản -->
+            <div class="setting-option">
+                <i class="fas fa-user"></i>
+                <span>Thông Tin Tài Khoản</span>
+                <button onclick="window.location.href='account_info.html'">Xem Thông Tin</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

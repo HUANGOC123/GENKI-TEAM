@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảnh Báo Sức Khoẻ</title>
+    <link rel="stylesheet" href="FormCBSKstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cảnh Báo Sức Khoẻ</h2>
+
+        <!-- Các chỉ số sức khoẻ -->
+        <div class="health-indicators">
+            <div class="indicator" id="heart-rate">
+                <h3>Nhịp Tim</h3>
+                <p id="heart-rate-value">80 bpm</p>
+                <p id="heart-rate-status">An toàn</p>
+            </div>
+            <div class="indicator" id="blood-pressure">
+                <h3>Huyết Áp</h3>
+                <p id="blood-pressure-value">120/80 mmHg</p>
+                <p id="blood-pressure-status">An toàn</p>
+            </div>
+            <div class="indicator" id="temperature">
+                <h3>Nhiệt Độ Cơ Thể</h3>
+                <p id="temperature-value">36.5°C</p>
+                <p id="temperature-status">An toàn</p>
+            </div>
+        </div>
+
+        <!-- Khu vực cảnh báo -->
+        <div class="alert-area">
+            <h3>Cảnh Báo:</h3>
+            <p id="alert-message">Tất cả các chỉ số sức khoẻ đều bình thường.</p>
+        </div>
+
+        <!-- Form nhập liệu để thử nghiệm -->
+        <div class="input-area">
+            <h3>Nhập Chỉ Số Mới</h3>
+            <form id="health-form">
+                <input type="number" id="input-heart-rate" placeholder="Nhập nhịp tim (bpm)" required>
+                <input type="text" id="input-blood-pressure" placeholder="Nhập huyết áp (mmHg)" required>
+                <input type="number" id="input-temperature" placeholder="Nhập nhiệt độ cơ thể (°C)" required>
+                <button type="submit">Cập Nhật</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Các giá trị ngưỡng cảnh báo
+        const thresholds = {
+            heartRate: { min: 60, max: 100 },      // Nhịp tim: 60 - 100 bpm
+            bloodPressure: { min: "90/60", max: "140/90" }, // Huyết áp: 90/60 - 140/90 mmHg
+            temperature: { min: 36.0, max: 37.5 }  // Nhiệt độ cơ thể: 36.0°C - 37.5°C
+        };
+
+        // Dữ liệu hiện tại
+        let healthData = {
+            heartRate: 80,  // Nhịp tim
+            bloodPressure: "120/80", // Huyết áp
+            temperature: 36.5 // Nhiệt độ
+        };
+
+        // Hiển thị các giá trị ban đầu
+        document.getElementById('heart-rate-value').textContent = `${healthData.heartRate} bpm`;
+        document.getElementById('blood-pressure-value').textContent = healthData.bloodPressure;
+        document.getElementById('temperature-value').textContent = `${healthData.temperature}°C`;
+
+        // Hàm kiểm tra trạng thái sức khoẻ
+        function checkHealthStatus() {
+            let alertMessage = "Tất cả các chỉ số sức khoẻ đều bình thường.";
+
+            // Kiểm tra nhịp tim
+            const heartRateStatus = healthData.heartRate < thresholds.heartRate.min || healthData.heartRate > thresholds.heartRate.max
+                ? "Cảnh Báo: Nhịp tim bất thường!" : "Nhịp tim an toàn";
+
+            // Kiểm tra huyết áp
+            const bloodPressureStatus = (parseInt(healthData.bloodPressure.split('/')[0]) < parseInt(thresholds.bloodPressure.min.split('/')[0]) ||
+                                         parseInt(healthData.bloodPressure.split('/')[1]) < parseInt(thresholds.bloodPressure.min.split('/')[1]) ||
+                                         parseInt(healthData.bloodPressure.split('/')[0]) > parseInt(thresholds.bloodPressure.max.split('/')[0]) ||
+                                         parseInt(healthData.bloodPressure.split('/')[1]) > parseInt(thresholds.bloodPressure.max.split('/')[1])) 
+                ? "Cảnh Báo: Huyết áp bất thường!" : "Huyết áp an toàn";
+
+            // Kiểm tra nhiệt độ
+            const temperatureStatus = healthData.temperature < thresholds.temperature.min || healthData.temperature > thresholds.temperature.max
+                ? "Cảnh Báo: Nhiệt độ cơ thể bất thường!" : "Nhiệt độ cơ thể an toàn";
+
+            // Cập nhật các chỉ số và thông báo
+            document.getElementById('heart-rate-status').textContent = heartRateStatus;
+            document.getElementById('blood-pressure-status').textContent = bloodPressureStatus;
+            document.getElementById('temperature-status').textContent = temperatureStatus;
+
+            // Cập nhật cảnh báo chung
+            if (heartRateStatus.includes("Cảnh Báo") || bloodPressureStatus.includes("Cảnh Báo") || temperatureStatus.includes("Cảnh Báo")) {
+                alertMessage = "Cảnh báo: Một hoặc nhiều chỉ số sức khoẻ không bình thường.";
+            }
+            document.getElementById('alert-message').textContent = alertMessage;
+        }
+
+        // Sự kiện khi người dùng nhập chỉ số mới
+        document.getElementById('health-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Lấy dữ liệu từ form
+            healthData.heartRate = parseInt(document.getElementById('input-heart-rate').value);
+            healthData.bloodPressure = document.getElementById('input-blood-pressure').value;
+            healthData.temperature = parseFloat(document.getElementById('input-temperature').value);
+
+            // Cập nhật giao diện
+            document.getElementById('heart-rate-value').textContent = `${healthData.heartRate} bpm`;
+            document.getElementById('blood-pressure-value').textContent = healthData.bloodPressure;
+            document.getElementById('temperature-value').textContent = `${healthData.temperature}°C`;
+
+            // Kiểm tra lại tình trạng sức khoẻ
+            checkHealthStatus();
+        });
+
+        // Kiểm tra trạng thái sức khoẻ khi load trang
+        checkHealthStatus();
+    </script>
+</body>
+</html>

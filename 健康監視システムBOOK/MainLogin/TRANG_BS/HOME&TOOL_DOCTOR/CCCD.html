@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Cụ Chẩn Đoán</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="diagnostics.css">
+</head>
+<body>
+    <header>
+        <h1>Công Cụ Chẩn Đoán</h1>
+    </header>
+
+    <main>
+        <!-- Form Nhập Triệu Chứng -->
+        <section class="symptom-section">
+            <h2>Nhập Triệu Chứng</h2>
+            <form action="#" method="post" id="diagnosis-form">
+                <label for="symptoms">Mô tả triệu chứng:</label>
+                <textarea id="symptoms" name="symptoms" rows="4" placeholder="Ví dụ: đau đầu, sốt, mệt mỏi..." required></textarea>
+                <button type="submit" class="btn-diagnose"><i class="fas fa-search"></i> Tra Cứu</button>
+            </form>
+        </section>
+
+        <!-- Kết Quả Chẩn Đoán -->
+        <section class="results-section">
+            <h2>Kết Quả Gợi Ý</h2>
+            <div class="results-container">
+                <div class="result-item">
+                    <h3>Cảm Cúm</h3>
+                    <p><strong>Triệu chứng:</strong> Sốt, ho, đau nhức cơ thể.</p>
+                    <p><strong>Nguyên nhân:</strong> Virus cúm.</p>
+                    <p><strong>Điều trị:</strong> Nghỉ ngơi, uống nhiều nước, thuốc giảm đau.</p>
+                    <a href="#" class="btn-more-info"><i class="fas fa-book"></i> Xem thêm tài liệu</a>
+                </div>
+                <div class="result-item">
+                    <h3>Đau Nửa Đầu</h3>
+                    <p><strong>Triệu chứng:</strong> Đau đầu dữ dội, buồn nôn.</p>
+                    <p><strong>Nguyên nhân:</strong> Căng thẳng, mất ngủ.</p>
+                    <p><strong>Điều trị:</strong> Nghỉ ngơi, dùng thuốc giảm đau.</p>
+                    <a href="#" class="btn-more-info"><i class="fas fa-book"></i> Xem thêm tài liệu</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>

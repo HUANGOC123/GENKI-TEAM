@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo & Phân Tích</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="reports_analysis.css">
+</head>
+<body>
+    <header>
+        <h1>Báo Cáo & Phân Tích</h1>
+    </header>
+
+    <main>
+        <!-- Phần chọn bộ lọc -->
+        <section class="filter-section">
+            <h2>Lọc Báo Cáo</h2>
+            <form>
+                <label for="time-period">Thời Gian:</label>
+                <select id="time-period">
+                    <option value="daily">Hàng Ngày</option>
+                    <option value="weekly">Hàng Tuần</option>
+                    <option value="monthly">Hàng Tháng</option>
+                </select>
+
+                <label for="report-type">Loại Báo Cáo:</label>
+                <select id="report-type">
+                    <option value="heart-rate">Nhịp Tim</option>
+                    <option value="blood-sugar">Đường Huyết</option>
+                    <option value="blood-pressure">Huyết Áp</option>
+                </select>
+
+                <button type="button" class="btn-filter">Áp Dụng</button>
+            </form>
+        </section>
+
+        <!-- Phần biểu đồ -->
+        <section class="chart-section">
+            <h2>Biểu Đồ Phân Tích</h2>
+            <div class="chart-container">
+                <canvas id="reportChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Phần bảng dữ liệu -->
+        <section class="table-section">
+            <h2>Dữ Liệu Chi Tiết</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Loại Chỉ Số</th>
+                        <th>Giá Trị</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06/12/2024</td>
+                        <td>Nhịp Tim</td>
+                        <td>85 bpm</td>
+                        <td><span class="status normal">Bình Thường</span></td>
+                    </tr>
+                    <tr>
+                        <td>05/12/2024</td>
+                        <td>Đường Huyết</td>
+                        <td>150 mg/dL</td>
+                        <td><span class="status high">Cao</span></td>
+                    </tr>
+                    <tr>
+                        <td>04/12/2024</td>
+                        <td>Huyết Áp</td>
+                        <td>120/80 mmHg</td>
+                        <td><span class="status normal">Bình Thường</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <!-- Thêm thư viện Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="report_chart.js"></script>
+</body>
+</html>

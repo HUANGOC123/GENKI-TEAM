@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - App Sức Khỏe</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home-style.css">
+</head>
+<body>
+    <header>
+        <button class="language-switch" onclick="switchLanguage()">VN / JP</button>
+    </header>
+    <script>
+        // Dữ liệu ngôn ngữ
+        const translations = {
+            vi: {
+                home: "Trang Chủ",
+                settings: "Cài Đặt",
+                notifications: "Thông Báo",
+                tools: {
+                    register: "Đăng Ký Khám Bệnh",
+                    history: "Sổ Khám Bệnh",
+                    tracking: "Theo Dõi Sức Khỏe",
+                    medicine: "Lịch Sử Dược Phẩm",
+                    alerts: "Cảnh Báo Sức Khỏe",
+                    nearby_hospitals: "Tìm Bệnh Viện Gần Nhất",
+                    nutrition: "Thực Đơn Dinh Dưỡng",
+                    emergency: "Tai Nạn Khẩn Cấp"
+                }
+            },
+            jp: {
+                home: "ホーム",
+                settings: "設定",
+                notifications: "通知",
+                tools: {
+                    register: "診察の登録",
+                    history: "診察履歴",
+                    tracking: "健康追跡",
+                    medicine: "薬の履歴",
+                    alerts: "健康警告",
+                    nearby_hospitals: "近くの病院を探す",
+                    nutrition: "栄養メニュー",
+                    emergency: "緊急事故"
+                }
+            }
+        };
+
+        let currentLanguage = "vi"; // Ngôn ngữ mặc định
+
+        // Hàm chuyển đổi ngôn ngữ
+        function switchLanguage() {
+            currentLanguage = currentLanguage === "vi" ? "jp" : "vi";
+
+            // Cập nhật nội dung trang
+            document.querySelector(".page-title").textContent = translations[currentLanguage].home;
+            document.querySelectorAll(".nav-item")[0].textContent = translations[currentLanguage].home;
+            document.querySelectorAll(".nav-item")[1].textContent = translations[currentLanguage].settings;
+            document.querySelectorAll(".nav-item")[2].textContent = translations[currentLanguage].notifications;
+
+            const toolCards = document.querySelectorAll(".tool-card p");
+            const tools = translations[currentLanguage].tools;
+
+            toolCards[0].textContent = tools.register;
+            toolCards[1].textContent = tools.history;
+            toolCards[2].textContent = tools.tracking;
+            toolCards[3].textContent = tools.medicine;
+            toolCards[4].textContent = tools.alerts;
+            toolCards[5].textContent = tools.nearby_hospitals;
+            toolCards[6].textContent = tools.nutrition;
+            toolCards[7].textContent = tools.emergency;
+        }
+
+        // Hàm xử lý tai nạn khẩn cấp
+        function handleEmergency() {
+            alert("Đang gọi cấp cứu và thông báo cho người thân...");
+            // Thực hiện các bước gọi cấp cứu và gửi thông báo
+            // Ví dụ gọi API hoặc chuyển hướng đến một trang cấp cứu
+            // Có thể sử dụng Google Maps API hoặc các API khác để xác định vị trí và bệnh viện gần nhất
+        }
+    </script>
+    
+    <!-- Thanh điều hướng -->
+    <nav class="navbar">
+        <div class="nav-item">Trang Chủ</div>
+        <div class="nav-item">Cài Đặt</div>
+        <div class="nav-item">Thông Báo</div>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <h1 class="page-title">Trang Chủ</h1>
+
+        <!-- Các công cụ sức khỏe -->
+        <div class="tools-container">
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormĐKKB.html'">
+                <i class="fas fa-calendar-alt"></i>
+                <p>Đăng Ký Khám Bệnh</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormSKB.html'">
+                <i class="fas fa-book"></i>
+                <p>Sổ Khám Bệnh</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormTDSK.html'">
+                <i class="fas fa-heartbeat"></i>
+                <p>Theo Dõi Sức Khỏe</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormLSDP.html'">
+                <i class="fas fa-pills"></i>
+                <p>Lịch Sử Dược Phẩm</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormCBSK.html'">
+                <i class="fas fa-bell"></i>
+                <p>Cảnh Báo Sức Khỏe</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormTBVGNsstyle.css'">
+                <i class="fas fa-hospital-alt"></i>
+                <p>Tìm Bệnh Viện Gần Nhất</p>
+            </div>
+            <div class="tool-card" onclick="window.location.href='./HOME&TOOL_PATIENT/FormTĐDD.html'">
+                <i class="fas fa-utensils"></i>
+                <p>Thực Đơn Dinh Dưỡng</p>
+            </div>
+            <!-- Công cụ Tai Nạn Khẩn Cấp -->
+            <div class="tool-card emergency" onclick="handleEmergency()">
+                <i class="fas fa-ambulance"></i>
+                <p>Tai Nạn Khẩn Cấp</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Bạn có thể thêm các đoạn mã JavaScript để xử lý sự kiện nếu cần
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Emergency Section */
+.emergency-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.emergency-section h2 {
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+.emergency-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emergency-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.emergency-btn i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.emergency-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* First Aid Section */
+.first-aid-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.first-aid-section h2 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.first-aid-section ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.first-aid-section li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 14px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sổ Khám Bệnh</title>
+    <link rel="stylesheet" href="FormSKBstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sổ Khám Bệnh</h2>
+
+        <!-- Danh sách các lần khám -->
+        <div id="appointments-list">
+            <!-- Danh sách khám sẽ được điền bằng JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Mô phỏng dữ liệu lịch sử khám bệnh từ server
+        const appointments = [
+            {
+                id: 1,
+                doctor: "Bác Sĩ A",
+                date: "2024-11-10",
+                symptoms: "Đau đầu, chóng mặt",
+                details: "Khám tổng quát, bác sĩ kê thuốc giảm đau."
+            },
+            {
+                id: 2,
+                doctor: "Bác Sĩ B",
+                date: "2024-10-15",
+                symptoms: "Ho, sốt cao",
+                details: "Khám hô hấp, bác sĩ kê thuốc ho và kháng sinh."
+            },
+            {
+                id: 3,
+                doctor: "Bác Sĩ C",
+                date: "2024-09-25",
+                symptoms: "Mệt mỏi, khó thở",
+                details: "Khám tim mạch, bác sĩ yêu cầu làm thêm xét nghiệm máu."
+            }
+        ];
+
+        // Hiển thị danh sách các lần khám bệnh
+        const appointmentsList = document.getElementById('appointments-list');
+        appointments.forEach(appointment => {
+            const appointmentItem = document.createElement('div');
+            appointmentItem.classList.add('appointment-item');
+            appointmentItem.innerHTML = `
+                <h3>${appointment.date} - ${appointment.doctor}</h3>
+                <p>Triệu chứng: ${appointment.symptoms}</p>
+                <button onclick="showDetails(${appointment.id})">Xem chi tiết</button>
+            `;
+            appointmentsList.appendChild(appointmentItem);
+        });
+
+        // Hiển thị chi tiết lần khám
+        function showDetails(id) {
+            const appointment = appointments.find(app => app.id === id);
+            alert(`Chi tiết khám: ${appointment.details}`);
+        }
+    </script>
+</body>
+</html>

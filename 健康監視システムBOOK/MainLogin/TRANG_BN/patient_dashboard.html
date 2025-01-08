@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Bệnh Nhân</title>
+    <link rel="stylesheet" href="PatientLoginstyles.css"> <!-- Đường dẫn đến file CSS của bệnh nhân -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Chào Bệnh Nhân!</h1>
+        <p>Đây là trang làm việc của Bệnh Nhân.</p>
+        
+        <!-- Form Đăng Nhập Bệnh Nhân -->
+        <div class="login-form" id="patientLoginForm">
+            <h3 id="patientFormTitle">Đăng Nhập Bệnh Nhân</h3>
+            <input type="text" id="cccd" placeholder="Số CCCD (12 số)" />
+            <button id="patientLoginBtn" onclick="patientLogin()">Đăng Nhập</button>
+        </div>
+    </div>
+
+    <script>
+        // Hàm xử lý đăng nhập Bệnh Nhân
+        function patientLogin() {
+            const cccd = document.getElementById('cccd').value;
+            if (/^\d{12}$/.test(cccd)) {
+                //alert('Đăng nhập Bệnh Nhân thành công!');
+                // Chuyển hướng tới trang bệnh nhân (patient_dashboard.html)
+                window.location.href = 'TrangChu.html';  // Chuyển đến trang dashboard bệnh nhân
+            } else {
+                alert('CCCD phải có 12 chữ số!');
+            }
+        }
+    </script>
+</body>
+</html>

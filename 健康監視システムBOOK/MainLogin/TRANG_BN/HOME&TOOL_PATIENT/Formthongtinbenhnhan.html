@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin bệnh nhân</title>
+    <link rel="stylesheet" href="FormTTBNstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-title">Thông tin bệnh nhân</h2>
+        <form id="patientForm" class="patient-form">
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td><label for="fullName">Họ và tên</label></td>
+                        <td><input type="text" id="fullName" name="fullName" value="Nguyễn Văn A" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Ngày sinh</label></td>
+                        <td><input type="date" id="dob" name="dob" value="1990-05-20" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Giới tính</label></td>
+                        <td>
+                            <select id="gender" name="gender" disabled>
+                                <option value="male" selected>Nam</option>
+                                <option value="female">Nữ</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Địa chỉ</label></td>
+                        <td><input type="text" id="address" name="address" value="Hà Nội" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Số điện thoại</label></td>
+                        <td><input type="tel" id="phone" name="phone" value="0901234567" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" id="email" name="email" value="nguyenvana@example.com" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="healthStatus">Tình trạng sức khỏe</label></td>
+                        <td><textarea id="healthStatus" name="healthStatus" disabled>Tình trạng ổn định</textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" id="editButton" class="edit-btn">Chỉnh sửa</button>
+                            <button type="submit" id="saveButton" class="save-btn" style="display:none;">Lưu</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        // Xử lý chỉnh sửa thông tin
+        let isEditing = false;
+        const editButton = document.getElementById('editButton');
+        const saveButton = document.getElementById('saveButton');
+        const formFields = document.querySelectorAll('#patientForm input, #patientForm select, #patientForm textarea');
+
+        // Khi nhấn nút chỉnh sửa
+        editButton.addEventListener('click', function() {
+            isEditing = true;
+            formFields.forEach(field => field.disabled = false);  // Bật chế độ chỉnh sửa
+            editButton.style.display = 'none';  // Ẩn nút chỉnh sửa
+            saveButton.style.display = 'inline-block';  // Hiển thị nút lưu
+        });
+
+        // Khi nhấn nút lưu
+        saveButton.addEventListener('click', function(e) {
+            e.preventDefault();  // Ngừng gửi form
+            isEditing = false;
+            formFields.forEach(field => field.disabled = true);  // Tắt chế độ chỉnh sửa
+            editButton.style.display = 'inline-block';  // Hiển thị lại nút chỉnh sửa
+            saveButton.style.display = 'none';  // Ẩn nút lưu
+        });
+    </script>
+</body>
+</html>

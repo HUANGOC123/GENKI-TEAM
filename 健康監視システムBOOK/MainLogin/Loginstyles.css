@@ -1,0 +1,144 @@
+/* Reset lại các thuộc tính mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Nền trang */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f2ff; /* Màu nền xanh nhạt nhẹ nhàng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Phần Header chứa nút chuyển đổi ngôn ngữ */
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Nút chuyển đổi ngôn ngữ */
+.language-switch {
+    padding: 8px 15px;
+    background: #007acc; /* Xanh lam đậm, nổi bật */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.language-switch:hover {
+    background: #005f99; /* Tông màu lam đậm hơn khi hover */
+}
+
+/* Container chính cho form đăng nhập */
+.login-container {
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    height: 500px;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Phần chứa ảnh (bên trái như vở mở) */
+.image-section {
+    flex: 1;
+    background-image: url('DuanTN2025/img/th.jpg'); /* Đảm bảo đường dẫn tới hình ảnh là chính xác */
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+/* Phần form đăng nhập (bên phải) */
+.login-form {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fbff; /* Màu xanh rất nhạt cho nền */
+    border-radius: 0 15px 15px 0;
+}
+
+/* Tiêu đề trang */
+h2 {
+    font-size: 28px;
+    color: #007acc; /* Màu xanh lam đậm đồng bộ */
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Các nút chọn vai trò */
+.role-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Nút vai trò */
+.role-btn {
+    padding: 18px 28px;
+    background: #007acc; /* Nút màu xanh lam đậm */
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 250px;
+    height: 70px;
+    text-transform: capitalize;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.role-btn i {
+    font-size: 24px;
+}
+
+.role-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: #005f99; /* Lam đậm hơn khi hover */
+}
+
+.role-btn:active {
+    transform: translateY(2px);
+}
+
+/* Hiệu ứng khi nút xuất hiện */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Màu chữ chung */
+.login-form p {
+    color: #444; /* Màu chữ xám dễ nhìn */
+}

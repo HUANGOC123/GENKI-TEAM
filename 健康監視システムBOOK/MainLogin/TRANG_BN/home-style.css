@@ -1,0 +1,138 @@
+/* Phần Header chứa nút chuyển đổi ngôn ngữ */
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Nút chuyển đổi ngôn ngữ */
+.language-switch {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.language-switch:hover {
+    background: #00b894;
+    transform: scale(1.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Thanh điều hướng cố định ở dưới */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+}
+
+.nav-item {
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+/* Nội dung chính */
+.main-content {
+    margin: 80px auto 100px; /* Thêm khoảng trống tránh header và navbar */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Lưới công cụ (responsive) */
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Thẻ công cụ */
+.tool-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card i {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.tool-card p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 600px) {
+    .language-switch {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .tool-card {
+        padding: 20px;
+    }
+
+    .tool-card i {
+        font-size: 40px;
+    }
+
+    .tool-card p {
+        font-size: 16px;
+    }
+}
+.tool-card.emergency {
+    background-color: #e74c3c; /* Màu đỏ đặc biệt */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card.emergency:hover {
+    background-color: #c0392b; /* Màu đỏ đậm khi hover */
+}
+
+.tool-card.emergency i {
+    color: white;
+}

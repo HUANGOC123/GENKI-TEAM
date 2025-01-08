@@ -1,0 +1,96 @@
+/* Định dạng chung cho form */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    width: 70%;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-title {
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    color: #00cec9;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Định dạng bảng thông tin bệnh nhân */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.info-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.info-table td label {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-table td input, .info-table td select, .info-table td textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.info-table td input[disabled], .info-table td select[disabled], .info-table td textarea[disabled] {
+    background-color: #f0f0f0;
+}
+
+/* Các nút chức năng */
+.form-actions {
+    text-align: center;
+}
+
+.edit-btn, .save-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #00cec9;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #00b894;
+}
+
+.save-btn {
+    background-color: #00b894;
+    color: white;
+    display: none;
+}
+
+.save-btn:hover {
+    background-color: #00cec9;
+}

@@ -1,0 +1,116 @@
+/* Cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.language-switch {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.language-switch:hover {
+    background: #00b894;
+}
+
+/* Tiêu đề */
+.page-title {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Cảnh báo khẩn cấp */
+.accident-alert {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.alert-card {
+    background-color: #fff4e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.alert-card i {
+    font-size: 50px;
+    color: #ffcc00;
+}
+
+.alert-card h3 {
+    color: #d9534f;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.alert-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.alert-button {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.alert-button:hover {
+    background-color: #c9302c;
+}
+
+/* Bệnh viện gần nhất */
+.hospital-location {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.hospital-location h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.hospital-location p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.call-hospital-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.call-hospital-button:hover {
+    background-color: #0056b3;
+}

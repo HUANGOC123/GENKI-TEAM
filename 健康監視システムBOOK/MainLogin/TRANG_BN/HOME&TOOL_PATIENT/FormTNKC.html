@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Nạn Khẩn Cấp</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="FormTNKCstyles.css">
+</head>
+<body>
+    <header>
+        <button class="language-switch" onclick="switchLanguage()">VN / JP</button>
+    </header>
+
+    <div class="main-content">
+        <h1 class="page-title">Tai Nạn Khẩn Cấp</h1>
+
+        <div class="accident-alert">
+            <div class="alert-card">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Cảnh Báo Khẩn Cấp</h3>
+                <p>Hệ thống đã nhận diện tai nạn. Bạn có muốn gửi thông báo khẩn cấp và thông tin vị trí không?</p>
+                <button class="alert-button" onclick="sendEmergencyAlert()">Gửi Thông Báo Khẩn Cấp</button>
+            </div>
+        </div>
+
+        <div class="hospital-location">
+            <h3>Bệnh Viện Gần Nhất</h3>
+            <p id="hospital-info">Đang tìm kiếm bệnh viện gần nhất...</p>
+            <button class="call-hospital-button" onclick="callNearestHospital()">Gọi Bệnh Viện</button>
+        </div>
+    </div>
+
+    <script>
+        // Hàm gửi thông báo khẩn cấp
+        function sendEmergencyAlert() {
+            alert("Đã gửi thông báo khẩn cấp và thông tin vị trí!");
+            // Tại đây, bạn có thể thêm mã gửi thông tin đến người thân và cơ quan y tế
+        }
+
+        // Hàm gọi bệnh viện gần nhất
+        function callNearestHospital() {
+            document.getElementById("hospital-info").textContent = "Bệnh viện ABC, khoảng cách: 2 km";
+            // Tại đây, bạn có thể tích hợp API để tìm bệnh viện gần nhất và gọi đến số điện thoại của bệnh viện
+        }
+
+        // Tự động chuyển ngôn ngữ nếu cần (chưa có phần chuyển đổi ngôn ngữ cụ thể ở đây)
+        function switchLanguage() {
+            alert("Chuyển ngôn ngữ (chức năng này chưa được triển khai)");
+        }
+    </script>
+</body>
+</html>

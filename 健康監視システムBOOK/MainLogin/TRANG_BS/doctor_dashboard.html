@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Bác Sĩ</title>
+    <link rel="stylesheet" href="Doctorloginstyles.css"> <!-- Đường dẫn đến file CSS của bác sĩ -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Chào Bác Sĩ!</h1>
+        <p>Đây là trang làm việc của Bác Sĩ.</p>
+        
+        <!-- Form Đăng Nhập Bác Sĩ -->
+        <div class="login-form" id="doctorLoginForm">
+            <h3 id="doctorFormTitle">Đăng Nhập Bác Sĩ</h3>
+            <input type="text" id="doctorName" placeholder="Tên Bác Sĩ" />
+            <input type="password" id="doctorId" placeholder="Mật khẩu Bác Sĩ (6 số)" />
+            <button id="doctorLoginBtn">Đăng Nhập</button>
+        </div>
+    </div>
+
+    <script>
+        // Hàm xử lý đăng nhập Bác Sĩ
+        document.getElementById('doctorLoginBtn').addEventListener('click', function() {
+            const doctorName = document.getElementById('doctorName').value;
+            const doctorId = document.getElementById('doctorId').value;
+
+            // Kiểm tra nếu mật khẩu có đủ 6 chữ số
+            if (doctorId.length === 6) {
+              //  alert('Đăng nhập Bác Sĩ thành công!');
+                // Chuyển hướng tới trang thông tin bệnh án
+                window.location.href = 'TrangChu.html';  // Đảm bảo đường dẫn chính xác
+            } else {
+                alert('Mật khẩu phải có 6 chữ số!');
+            }
+        });
+    </script>
+</body>
+</html>

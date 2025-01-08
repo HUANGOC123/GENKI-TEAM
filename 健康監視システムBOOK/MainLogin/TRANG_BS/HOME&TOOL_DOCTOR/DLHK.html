@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Lịch Hẹn Khám</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="appointments.css">
+</head>
+<body>
+    <header>
+        <h1>Đặt Lịch Hẹn Khám</h1>
+    </header>
+
+    <main>
+        <section class="calendar-section">
+            <h2>Lịch Làm Việc</h2>
+            <div class="calendar">
+                <!-- Giả lập các ngày trong tháng -->
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day scheduled">3<br><span>09:00 - Nguyễn Văn A</span></div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day scheduled">6<br><span>14:00 - Trần Thị B</span></div>
+                <!-- Thêm các ô ngày khác -->
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Đặt Lịch Mới</h2>
+            <form action="#" method="post">
+                <label for="patient-name">Tên Bệnh Nhân:</label>
+                <input type="text" id="patient-name" name="patient-name" required placeholder="Nhập tên bệnh nhân...">
+
+                <label for="appointment-date">Ngày:</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+
+                <label for="appointment-time">Giờ:</label>
+                <input type="time" id="appointment-time" name="appointment-time" required>
+
+                <label for="reason">Lý Do Khám:</label>
+                <textarea id="reason" name="reason" rows="4" placeholder="Nhập lý do khám..."></textarea>
+
+                <button type="submit" class="btn-submit"><i class="fas fa-calendar-plus"></i> Đặt Lịch</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>

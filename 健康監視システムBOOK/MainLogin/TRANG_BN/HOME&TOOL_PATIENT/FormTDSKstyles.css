@@ -1,0 +1,99 @@
+/* Cấu hình chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Các phần tử thống kê sức khoẻ */
+.health-statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Mỗi mục thống kê */
+.stat-item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    color: #555;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Input và button */
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Điều chỉnh cho các màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .health-statistics {
+        grid-template-columns: 1fr; /* Chuyển về dạng một cột khi màn hình nhỏ */
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

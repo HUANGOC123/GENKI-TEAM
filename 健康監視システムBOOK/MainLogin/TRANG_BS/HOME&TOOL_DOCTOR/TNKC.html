@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Nạn Khẩn Cấp</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="emergency.css">
+</head>
+<body>
+    <header>
+        <h1>Tai Nạn Khẩn Cấp</h1>
+    </header>
+
+    <main>
+        <!-- Hướng dẫn và tùy chọn khẩn cấp -->
+        <section class="emergency-section">
+            <h2>Hành Động Nhanh</h2>
+            <div class="emergency-options">
+                <button class="emergency-btn" onclick="callAmbulance()">
+                    <i class="fas fa-ambulance"></i>
+                    <p>Gọi Cấp Cứu</p>
+                </button>
+                <button class="emergency-btn" onclick="notifyFamily()">
+                    <i class="fas fa-phone"></i>
+                    <p>Thông Báo Người Thân</p>
+                </button>
+                <button class="emergency-btn" onclick="findHospital()">
+                    <i class="fas fa-hospital"></i>
+                    <p>Tìm Bệnh Viện Gần Nhất</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Khu vực hướng dẫn sơ cứu -->
+        <section class="first-aid-section">
+            <h2>Hướng Dẫn Sơ Cứu</h2>
+            <p>Trong lúc chờ cấp cứu, bạn có thể tham khảo các bước sơ cứu dưới đây:</p>
+            <ul>
+                <li><strong>Bất tỉnh:</strong> Đặt bệnh nhân ở tư thế nằm nghiêng, đảm bảo đường thở thông thoáng.</li>
+                <li><strong>Chảy máu nặng:</strong> Dùng áp lực trực tiếp để cầm máu.</li>
+                <li><strong>Đau tim:</strong> Gọi cấp cứu ngay và hỗ trợ hô hấp nhân tạo nếu cần.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        function callAmbulance() {
+            alert("Đang gọi cấp cứu...");
+        }
+
+        function notifyFamily() {
+            alert("Thông báo đã được gửi đến người thân.");
+        }
+
+        function findHospital() {
+            alert("Đang tìm bệnh viện gần nhất trên bản đồ...");
+        }
+    </script>
+</body>
+</html>

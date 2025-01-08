@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Cụ Theo Dõi Sức Khoẻ</title>
+    <link rel="stylesheet" href="FormTDSKstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Công Cụ Theo Dõi Sức Khoẻ</h2>
+
+        <!-- Các chỉ số sức khoẻ -->
+        <div class="health-statistics">
+            <div class="stat-item">
+                <h3>Cân Nặng</h3>
+                <p id="weight">Chưa có dữ liệu</p>
+                <input type="number" id="input-weight" placeholder="Nhập cân nặng" />
+                <button onclick="saveWeight()">Lưu</button>
+            </div>
+            <div class="stat-item">
+                <h3>Nhịp Tim</h3>
+                <p id="heart-rate">Chưa có dữ liệu</p>
+                <input type="number" id="input-heart-rate" placeholder="Nhập nhịp tim" />
+                <button onclick="saveHeartRate()">Lưu</button>
+            </div>
+            <div class="stat-item">
+                <h3>Huyết Áp</h3>
+                <p id="blood-pressure">Chưa có dữ liệu</p>
+                <input type="text" id="input-blood-pressure" placeholder="Nhập huyết áp (ví dụ: 120/80)" />
+                <button onclick="saveBloodPressure()">Lưu</button>
+            </div>
+            <div class="stat-item">
+                <h3>Giấc Ngủ</h3>
+                <p id="sleep-duration">Chưa có dữ liệu</p>
+                <input type="number" id="input-sleep-duration" placeholder="Nhập số giờ ngủ" />
+                <button onclick="saveSleepDuration()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Giả sử dữ liệu ban đầu (có thể thay bằng dữ liệu lấy từ API sau)
+        let healthData = {
+            weight: null,
+            heartRate: null,
+            bloodPressure: null,
+            sleepDuration: null
+        };
+
+        // Hàm lưu cân nặng
+        function saveWeight() {
+            const weight = document.getElementById('input-weight').value;
+            healthData.weight = weight;
+            document.getElementById('weight').textContent = weight + " kg";
+        }
+
+        // Hàm lưu nhịp tim
+        function saveHeartRate() {
+            const heartRate = document.getElementById('input-heart-rate').value;
+            healthData.heartRate = heartRate;
+            document.getElementById('heart-rate').textContent = heartRate + " bpm";
+        }
+
+        // Hàm lưu huyết áp
+        function saveBloodPressure() {
+            const bloodPressure = document.getElementById('input-blood-pressure').value;
+            healthData.bloodPressure = bloodPressure;
+            document.getElementById('blood-pressure').textContent = bloodPressure;
+        }
+
+        // Hàm lưu giấc ngủ
+        function saveSleepDuration() {
+            const sleepDuration = document.getElementById('input-sleep-duration').value;
+            healthData.sleepDuration = sleepDuration;
+            document.getElementById('sleep-duration').textContent = sleepDuration + " giờ";
+        }
+    </script>
+</body>
+</html>

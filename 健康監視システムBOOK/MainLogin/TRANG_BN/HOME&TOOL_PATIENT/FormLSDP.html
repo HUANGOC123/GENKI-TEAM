@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Dược Phẩm</title>
+    <link rel="stylesheet" href="FormLSDPstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lịch Sử Dược Phẩm</h2>
+
+        <!-- Danh sách các loại thuốc đã sử dụng -->
+        <div id="medications-list">
+            <!-- Danh sách thuốc sẽ được điền bằng JavaScript -->
+        </div>
+
+        <!-- Form nhập thuốc mới -->
+        <div class="add-medication">
+            <h3>Thêm Thuốc Mới</h3>
+            <form id="medication-form">
+                <input type="text" id="medicine-name" placeholder="Tên thuốc" required />
+                <input type="text" id="dosage" placeholder="Liều lượng" required />
+                <input type="text" id="doctor" placeholder="Bác sĩ kê đơn" required />
+                <input type="date" id="date-prescribed" required />
+                <button type="submit">Lưu</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mô phỏng dữ liệu dược phẩm từ server
+        const medications = [
+            {
+                id: 1,
+                medicine: "Paracetamol",
+                dosage: "500mg",
+                doctor: "Bác Sĩ A",
+                datePrescribed: "2024-10-15"
+            },
+            {
+                id: 2,
+                medicine: "Amoxicillin",
+                dosage: "250mg",
+                doctor: "Bác Sĩ B",
+                datePrescribed: "2024-09-20"
+            },
+            {
+                id: 3,
+                medicine: "Ibuprofen",
+                dosage: "200mg",
+                doctor: "Bác Sĩ C",
+                datePrescribed: "2024-08-05"
+            }
+        ];
+
+        // Hiển thị danh sách thuốc
+        const medicationsList = document.getElementById('medications-list');
+        medications.forEach(medication => {
+            const medicationItem = document.createElement('div');
+            medicationItem.classList.add('medication-item');
+            medicationItem.innerHTML = `
+                <h3>${medication.medicine}</h3>
+                <p>Liều lượng: ${medication.dosage}</p>
+                <p>Bác sĩ kê đơn: ${medication.doctor}</p>
+                <p>Ngày kê đơn: ${medication.datePrescribed}</p>
+            `;
+            medicationsList.appendChild(medicationItem);
+        });
+
+        // Thêm thuốc mới
+        document.getElementById('medication-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newMedication = {
+                id: medications.length + 1,
+                medicine: document.getElementById('medicine-name').value,
+                dosage: document.getElementById('dosage').value,
+                doctor: document.getElementById('doctor').value,
+                datePrescribed: document.getElementById('date-prescribed').value
+            };
+
+            medications.push(newMedication);
+
+            const newMedicationItem = document.createElement('div');
+            newMedicationItem.classList.add('medication-item');
+            newMedicationItem.innerHTML = `
+                <h3>${newMedication.medicine}</h3>
+                <p>Liều lượng: ${newMedication.dosage}</p>
+                <p>Bác sĩ kê đơn: ${newMedication.doctor}</p>
+                <p>Ngày kê đơn: ${newMedication.datePrescribed}</p>
+            `;
+            medicationsList.appendChild(newMedicationItem);
+
+            // Reset form
+            document.getElementById('medication-form').reset();
+        });
+    </script>
+</body>
+</html>

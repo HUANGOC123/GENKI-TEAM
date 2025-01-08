@@ -1,0 +1,115 @@
+/* Cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Đầu trang */
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.language-switch {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.language-switch:hover {
+    background: #00b894;
+}
+
+/* Tiêu đề */
+.page-title {
+    font-size: 28px;
+    margin: 20px 0;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Cài đặt */
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Mỗi mục cài đặt */
+.setting-option {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.setting-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.setting-option i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.setting-option:hover i {
+    color: #00b894;
+}
+
+.setting-option span {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.setting-option select,
+.setting-option input {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.setting-option select {
+    width: 150px;
+}
+
+.setting-option input {
+    width: 20px;
+    height: 20px;
+}
+
+/* Nút xem thông tin */
+.setting-option button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.setting-option button:hover {
+    background-color: #00b894;
+}

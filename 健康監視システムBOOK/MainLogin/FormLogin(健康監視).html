@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Đăng Nhập</title>
+    <link rel="stylesheet" href="Loginstyles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Nút chuyển đổi ngôn ngữ nằm trong header -->
+    <header>
+        <button class="language-switch" onclick="switchLanguage()">VN / JP</button>
+    </header>
+
+    <!-- Phần chính của trang đăng nhập -->
+    <div class="login-container">
+        <!-- Phần chứa ảnh -->
+        <div class="image-section">
+            <img src="./IMG/MainLogin/th.jpg" alt="Health" class="background-image">
+        </div>
+        
+        <!-- Form đăng nhập kiểu quyển vở --> 
+        <div class="login-form">
+            <h2 id="selectRoleTitle">Chọn Vai Trò</h2>
+
+            <!-- Các nút chọn vai trò -->
+            <div class="role-buttons">
+                <button class="role-btn" onclick="goToDoctorLogin()">
+                    <i class="fas fa-user-md"></i>
+                    <span class="doctor-label">Bác Sĩ</span>
+                </button>
+                <button class="role-btn" onclick="goToPatientLogin()">
+                    <i class="fas fa-user-injured"></i>
+                    <span class="patient-label">Bệnh Nhân</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dữ liệu ngôn ngữ
+        const translations = {
+            vi: {
+                selectRoleTitle: "Chọn Vai Trò",
+                doctor: "Bác Sĩ",
+                patient: "Bệnh Nhân"
+            },
+            jp: {
+                selectRoleTitle: "役割を選択",
+                doctor: "医者",
+                patient: "病人"
+            }
+        };
+
+        let currentLanguage = "vi"; // Ngôn ngữ mặc định
+
+        // Hàm chuyển đổi ngôn ngữ
+        function switchLanguage() {
+            // Chuyển đổi ngôn ngữ
+            currentLanguage = currentLanguage === "vi" ? "jp" : "vi";
+
+            // Cập nhật nội dung
+            document.getElementById('selectRoleTitle').textContent = translations[currentLanguage].selectRoleTitle;
+            document.querySelector('.doctor-label').textContent = translations[currentLanguage].doctor;
+            document.querySelector('.patient-label').textContent = translations[currentLanguage].patient;
+        }
+
+        // Chuyển hướng đến trang đăng nhập Bác Sĩ
+        function goToDoctorLogin() {
+            window.location.href = './TRANG_BS/doctor_dashboard.html';
+ 
+        }
+
+        // Chuyển hướng đến trang đăng nhập Bệnh Nhân
+        function goToPatientLogin() {
+            window.location.href = './TRANG_BN/patient_dashboard.html'; 
+        }
+    </script>
+</body>
+</html>

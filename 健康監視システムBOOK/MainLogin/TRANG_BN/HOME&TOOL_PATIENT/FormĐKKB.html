@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Khám Bệnh</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="FormĐKKBstyles.css">
+    <scrip src="FormĐKKB.js" defer></scrip>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng Ký Khám Bệnh</h2>
+
+        <!-- Form đăng ký -->
+        <form id="appointment-form">
+            <label for="name">Họ và Tên</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Ngày Sinh</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="symptoms">Mô Tả Triệu Chứng</label>
+            <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+
+            <label for="doctor">Chọn Bác Sĩ</label>
+            <select id="doctor" name="doctor" required>
+                <option value="doctor1">Bác Sĩ A</option>
+                <option value="doctor2">Bác Sĩ B</option>
+                <option value="doctor3">Bác Sĩ C</option>
+            </select>
+
+            <label for="appointment-date">Chọn Ngày Khám</label>
+            <input type="date" id="appointment-date" name="appointment-date" required>
+
+            <button type="submit" class="submit-btn">Đăng Ký Khám</button>
+        </form>
+    </div>
+
+    <script>
+        
+        // Xử lý form đăng ký khám bệnh
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Ngăn chặn gửi form mặc định
+
+            const name = document.getElementById('name').value;
+            const dob = document.getElementById('dob').value;
+            const symptoms = document.getElementById('symptoms').value;
+            const doctor = document.getElementById('doctor').value;
+            const appointmentDate = document.getElementById('appointment-date').value;
+
+            // Kiểm tra thông tin nhập vào
+            if (!name || !dob || !symptoms || !doctor || !appointmentDate) {
+                alert("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            // Gửi thông tin đăng ký (chỉ mô phỏng ở đây)
+            alert("Đăng ký khám bệnh thành công!");
+
+            // Gửi dữ liệu lên server (API) trong tương lai
+            // fetch('API_URL', {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //         name: name,
+            //         dob: dob,
+            //         symptoms: symptoms,
+            //         doctor: doctor,
+            //         appointmentDate: appointmentDate
+            //     }),
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // })
+            // .then(response => response.json())
+            // .then(data => console.log(data))
+            // .catch(error => console.log(error));
+        });
+    </script>
+</body>
+</html>

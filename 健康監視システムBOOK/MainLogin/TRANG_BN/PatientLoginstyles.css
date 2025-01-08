@@ -1,0 +1,129 @@
+/* Reset lại các thuộc tính mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body của trang */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f8fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container chính của form đăng nhập */
+.login-container {
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    width: 400px;
+}
+
+/* Tiêu đề form */
+h1 {
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Tiêu đề phụ */
+h3 {
+    font-size: 22px;
+    color: #4a90e2;
+    margin-bottom: 30px;
+}
+
+/* Các input của form */
+input {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+
+/* Nút đăng nhập */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: linear-gradient(145deg, #4a90e2, #357ab7);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(145deg, #357ab7, #4a90e2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tạo hiệu ứng 3D cho form */
+.login-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px);
+    transition: transform 0.4s ease-in-out;
+}
+
+.login-form:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+/* Các hiệu ứng cho các phần tử input và button khi focus */
+input:focus, button:focus {
+    outline: none;
+}
+
+/* Để các button và input có độ cong nhẹ */
+input, button {
+    border-radius: 10px;
+}
+
+/* Các hiệu ứng animation cho toàn bộ trang */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Áp dụng animation khi tải trang */
+.login-container {
+    animation: slideIn 0.6s ease-out;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ Bác Sĩ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="doctor-home.css">
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Hệ Thống Dành Cho Bác Sĩ</h1>
+        <button class="language-switch" onclick="switchLanguage()" aria-label="Chuyển đổi ngôn ngữ">VN / JP</button>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-item" id="nav-home">Trang Chủ</div>
+        <div class="nav-item" id="nav-patient-management">Quản Lý Bệnh Nhân</div>
+        <div class="nav-item" id="nav-schedule">Lịch Làm Việc</div>
+        <div class="nav-item" id="nav-tools">Công Cụ Hỗ Trợ</div>
+    </nav>
+
+    <div class="main-content">
+        <h2 class="page-title" id="welcome-message">Chào Mừng, Bác Sĩ!</h2>
+        <p class="intro-text" id="intro-text">Dưới đây là các công cụ hỗ trợ công việc của bạn:</p>
+
+        <div class="tools-container">
+            <div class="tool-card" onclick="navigateTo('./QLHSBN.html')">
+                <i class="fas fa-folder-open"></i>
+                <p id="tool-patient-records">Quản Lý Hồ Sơ Bệnh Nhân</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./DLHK.html')">
+                <i class="fas fa-calendar-alt"></i>
+                <p id="tool-appointments">Đặt Lịch Hẹn Khám</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./CCCD.html')">
+                <i class="fas fa-diagnoses"></i>
+                <p id="tool-diagnostics">Công Cụ Chẩn Đoán</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./QLDT.html')">
+                <i class="fas fa-prescription"></i>
+                <p id="tool-prescriptions">Quản Lý Đơn Thuốc</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./CBSK.html')">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="tool-health-alerts">Cảnh Báo Sức Khỏe</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./BCVPT.html')">
+                <i class="fas fa-chart-pie"></i>
+                <p id="tool-reports">Báo Cáo & Phân Tích</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./HTTT.html')">
+                <i class="fas fa-comments"></i>
+                <p id="tool-interaction">Hỗ Trợ Tương Tác</p>
+            </div>
+            <div class="tool-card" onclick="navigateTo('./TLYK.html')">
+                <i class="fas fa-book-medical"></i>
+                <p id="tool-medical-resources">Tài Liệu Y Khoa</p>
+            </div>
+            <div class="tool-card emergency" onclick="handleEmergency()">
+                <i class="fas fa-ambulance"></i>
+                <p id="tool-emergency">Tai Nạn Khẩn Cấp</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p id="footer-text">&copy; 2024 Hệ Thống Sức Khỏe. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <!-- <script src="doctor-home.js" defer></script> -->
+    <script src="../../../JS/doctor-home.js" defer></script>
+</body>
+</html>
